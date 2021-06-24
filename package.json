@@ -1,0 +1,11 @@
+{
+  "name": "moreaujulie_3_24062021",
+  "version": "1.0.0",
+  "description": "oh my food",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./sass/main.scss:./public/css/style.css -w --style compressed"
+  },
+  "author": "",
+  "license": "ISC"
+  }
