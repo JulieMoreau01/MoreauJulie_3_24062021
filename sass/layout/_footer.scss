@@ -1,0 +1,34 @@
+footer {
+    background: $color-dark;
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items:  flex-start;
+        width: 100%;
+        h3 {
+            margin: 23px 0px 17px 0px;
+            font-family: 'Shrikhand', 'arial', cursive;
+            font-weight: normal;
+            color: white;
+        }
+        ul {
+            margin: 0px 0px 35px 0px;
+            padding: 0px;
+            list-style: none;
+            li {
+                margin: 0 0 7px 0;;
+                i {
+                    color: white;
+                    font-size: 0.9rem;
+                    margin-right: 7px;
+                    min-width: 17px;
+                }
+                a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+}

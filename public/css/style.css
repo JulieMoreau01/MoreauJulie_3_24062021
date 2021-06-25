@@ -2,8 +2,17 @@
   box-sizing: border-box;
 }
 
+figure {
+  margin: 0px;
+}
+
+img {
+  width: 100%;
+}
+
 html {
   font-family: "roboto", "arial", sans-serif;
+  font-size: 14px;
 }
 html body {
   margin: 0;
@@ -15,20 +24,61 @@ html body {
 html body header, html body footer {
   width: 100%;
 }
-html body main {
+html body main, html body footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+html body main section, html body footer section {
   width: 100%;
   max-width: 1340px;
   padding: 0 20px;
 }
 @media screen and (min-width: 768px) {
-  html body main {
+  html body main section, html body footer section {
     padding: 0 40px;
   }
 }
 @media screen and (min-width: 1024px) {
-  html body main {
+  html body main section, html body footer section {
     padding: 0 20px;
   }
+}
+
+footer {
+  background: #353535;
+}
+footer section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+footer section h3 {
+  margin: 23px 0px 17px 0px;
+  font-family: "Shrikhand", "arial", cursive;
+  font-weight: normal;
+  color: white;
+}
+footer section ul {
+  margin: 0px 0px 35px 0px;
+  padding: 0px;
+  list-style: none;
+}
+footer section ul li {
+  margin: 0 0 7px 0;
+}
+footer section ul li i {
+  color: white;
+  font-size: 0.9rem;
+  margin-right: 7px;
+  min-width: 17px;
+}
+footer section ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
 }
 
 header {
