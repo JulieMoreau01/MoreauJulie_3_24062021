@@ -1,3 +1,62 @@
+* {
+  box-sizing: border-box;
+}
 
+html {
+  font-family: "roboto", "arial", sans-serif;
+}
+html body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+html body header, html body footer {
+  width: 100%;
+}
+html body main {
+  width: 100%;
+  max-width: 1340px;
+  padding: 0 20px;
+}
+@media screen and (min-width: 768px) {
+  html body main {
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body main {
+    padding: 0 20px;
+  }
+}
+
+header {
+  height: 63px;
+  box-shadow: 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+header p {
+  margin: 0px;
+  position: absolute;
+  top: center;
+  left: 20px;
+}
+header p a {
+  color: #353535;
+}
+header figure {
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+header figure img {
+  height: 28px;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,27 @@
+header {
+    height: 63px;
+    box-shadow: 0px 6px 7px -3px rgba(151,151,151,0.84);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    p {
+        margin: 0px;
+        position: absolute;
+        top: center;
+        left: 20px;
+        a {
+            color: $color-text;
+        }
+    }
+    figure {
+        margin: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        img {
+            height: 28px;
+        }
+    }
+}
