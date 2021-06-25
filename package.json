@@ -4,7 +4,7 @@
   "description": "oh my food",
   "main": "index.js",
   "scripts": {
-    "sass": "sass ./sass/main.scss:./public/css/style.css -w --style compressed"
+    "sass": "sass ./sass/main.scss:./public/css/style.css -w --style expanded"
   },
   "author": "",
   "license": "ISC"
