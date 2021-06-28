@@ -32,7 +32,6 @@ html body main, html body footer {
 }
 html body main section, html body footer section {
   width: 100%;
-  max-width: 1340px;
   padding: 0 20px;
 }
 @media screen and (min-width: 768px) {
@@ -43,6 +42,11 @@ html body main section, html body footer section {
 @media screen and (min-width: 1024px) {
   html body main section, html body footer section {
     padding: 0 20px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html body main section:not(.full), html body footer section:not(.full) {
+    max-width: 1340px;
   }
 }
 
@@ -88,6 +92,12 @@ header {
   align-items: center;
   justify-content: center;
   position: relative;
+  padding: 0px 20px;
+}
+@media screen and (min-width: 1024px) {
+  header {
+    justify-content: flex-start;
+  }
 }
 header p {
   margin: 0px;
@@ -107,6 +117,262 @@ header figure {
 }
 header figure img {
   height: 28px;
+}
+
+section#introduction, section#fonctionnement, section#restaurant {
+  padding-top: 54px;
+  padding-bottom: 64px;
+}
+
+section#localisation {
+  width: 100%;
+  background-color: #eaeaea;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+section#localisation i {
+  margin-right: 18px;
+}
+
+section#introduction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+}
+section#introduction h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0px 0px 20px 0px;
+}
+section#introduction p {
+  margin: 0px 0px 30px 0px;
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin: 0px 0 22px 0px;
+}
+
+section#fonctionnement ol {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  counter-reset: li;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1024px) {
+  section#fonctionnement ol {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+section#fonctionnement ol li {
+  background-color: #f6f6f6;
+  border-radius: 20px;
+  counter-increment: li;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 25px 0px;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  flex-basis: 30%;
+  max-height: 72px;
+  box-shadow: 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
+  margin-left: 11px;
+}
+section#fonctionnement ol li::before {
+  content: counter(li);
+  font-size: 0.9rem;
+  color: white;
+  width: 22px;
+  height: 22px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -10px;
+}
+section#fonctionnement ol li i {
+  font-size: 1.4rem;
+  color: #7e7e7e;
+  margin: 0px 18px 0px 22px;
+}
+section#fonctionnement ol li.light {
+  background-color: #f2eafb;
+}
+section#fonctionnement ol li.light i {
+  color: #9356DC;
+}
+section#fonctionnement ol li:last-child {
+  margin-bottom: 0px;
+}
+
+section#restaurant {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #f6f6f6;
+}
+@media screen and (min-width: 1024px) {
+  section#restaurant {
+    background-color: white;
+  }
+}
+@media screen and (min-width: 768px) {
+  section#restaurant {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+section#restaurant h2 {
+  width: 100%;
+}
+section#restaurant figure {
+  box-shadow: 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
+  border-radius: 20px;
+  margin-bottom: 25px;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  section#restaurant figure {
+    flex-basis: 47%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  section#restaurant figure {
+    flex-basis: 22%;
+  }
+}
+section#restaurant figure img {
+  display: flex;
+  border-radius: 20px 20px 0px 0px;
+  object-fit: cover;
+  height: 174px;
+}
+@media screen and (min-width: 1024px) {
+  section#restaurant figure img {
+    height: 220px;
+  }
+}
+section#restaurant figure figcaption {
+  background-color: white;
+  border-radius: 0px 0px 20px 20px;
+  height: 77px;
+}
+section#restaurant figure figcaption a {
+  color: #353535;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  padding: 0px 14px;
+}
+section#restaurant figure figcaption a .new {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #278870;
+  background-color: #99E2D0;
+  font-size: 0.9rem;
+  padding: 6px 13px;
+  border-radius: 2px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+section#restaurant figure figcaption a .name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: inline-block;
+}
+section#restaurant figure figcaption a .city {
+  font-size: 1.2rem;
+  font-weight: 300;
+  display: inline-block;
+  width: 100%;
+}
+@media screen and (min-width: 0px) and (max-width: 768px) {
+  section#restaurant figure:last-child {
+    margin-bottom: 0px;
+  }
+}
+
+picture {
+  height: 260px;
+  width: 100%;
+}
+picture img {
+  height: 260px;
+  object-fit: cover;
+}
+
+button {
+  background: linear-gradient(#FF79DA, #9356DC);
+  border-radius: 25px;
+  font-size: 1.1rem;
+  color: white;
+  padding: 20px;
+  border: none;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: max-content;
+  box-shadow: 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
+}
+button:hover {
+  background: linear-gradient(#ff93e1, #a16be0);
+  box-shadow: 0px 6px 7px -3px rgba(151, 151, 151, 0.94);
+}
+
+.heart {
+  clip-path: path("M2 ,7 A5,  5,0,0,1, 12,7  A5, 5,0,0,1, 22, 7  Q22, 15,12,22 Q2,  15,2, 7 Z");
+  margin: 0;
+  display: block;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  background: url(../images/logo/heart-border2.svg);
+  background-size: 19px;
+  background-position: 2px 2px;
+  background-repeat: no-repeat;
+  position: relative;
+  border: 1px solid blue;
+}
+.heart::after {
+  content: "";
+  width: 25px;
+  height: 25px;
+  background: linear-gradient(#9356DC, #FF79DA);
+  display: block;
+  z-index: 0;
+  transition: transform 0.5s ease-out;
+  transform-origin: bottom;
+  transform: scaleY(0);
+}
+.heart:hover::after {
+  transform: scaleY(1);
+}
+.heart:not(hover)::after {
+  height: 23px;
+  transform: scaleY(0);
 }
 
 /*# sourceMappingURL=style.css.map */

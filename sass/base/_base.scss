@@ -29,10 +29,12 @@ html {
             width: 100%;
             section {
                 width: 100%;
-                max-width: 1340px;
                 padding: 0 20px;
                 @include media(tablet) { padding: 0 40px; }
                 @include media(desktop) { padding: 0 20px;}
+            }
+            section:not(.full) {
+                @include media(desktop) { max-width: 1340px;}
             }
         }
 

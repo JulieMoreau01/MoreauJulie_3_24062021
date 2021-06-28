@@ -5,6 +5,10 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 0px 20px;
+    @include media(desktop) {
+        justify-content: flex-start;
+    }
     p {
         margin: 0px;
         position: absolute;

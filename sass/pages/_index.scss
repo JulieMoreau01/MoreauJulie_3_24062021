@@ -1,3 +1,181 @@
+section#introduction, section#fonctionnement, section#restaurant {
+    padding-top: 54px;
+    padding-bottom: 64px;
+}
+
+section#localisation {
+    width: 100%;
+    background-color: $color-light-gray;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: 1.3rem;
+    i {
+        margin-right: 18px;
+    }
+}
+
 section#introduction {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-superlight-gray;
+    h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0px 0px 20px 0px;
+    }
+    p {
+        margin: 0px 0px 30px 0px;
+        font-size: 1.1rem;
+        text-align: center;
+        font-weight: 300;
+    }
+}
+
+h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin: 0px 0 22px 0px;
+}
+
+section#fonctionnement {
+    ol {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        counter-reset: li;
+        display: flex;
+        flex-direction: column;
+        @include media(desktop){
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        li {
+            background-color: $color-superlight-gray;
+            border-radius: 20px;
+            counter-increment: li;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 25px 0px;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            flex-basis: 30%;
+            max-height: 72px;
+            box-shadow: $shadow;
+            margin-left: 11px;
+            &::before {
+                content: counter(li);
+                font-size: 0.9rem;
+                color: white;
+                width: 22px;
+                height: 22px;
+                background-color: $color-primaire;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: -10px;
+            }
+            i {
+                font-size: 1.4rem;
+                color: $color-gray;
+                margin: 0px 18px 0px 22px;
+            }
+        }
+        li.light {
+            background-color: lighten($color-primaire, 35%);
+            i {color: $color-primaire;}
+        }
+        li:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+$radius-size: 20px;
+
+section#restaurant {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: $color-superlight-gray;
+    @include media(desktop) {
+        background-color: white;
+    }
+    @include media(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    h2 {width: 100%;}
+    figure {
+        box-shadow: $shadow;
+        border-radius: $radius-size;
+        margin-bottom: 25px;
+        position: relative;
+        @include media(tablet) {
+            flex-basis: 47%;
+        }
+        @include media(desktop) {
+            flex-basis: 22%;
+        }
+        img {
+            display: flex;
+            border-radius: $radius-size $radius-size 0px 0px;
+            object-fit: cover;
+            height: 174px;
+            @include media(desktop) {
+                height: 220px;
+            }
+        }
+        figcaption {
+            background-color: white;
+            border-radius: 0px 0px $radius-size $radius-size;
+            height: 77px;
+            a {
+                color: $color-dark;
+                text-decoration: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-content: center;
+                flex-wrap: wrap;
+                height: 100%;
+                padding: 0px 14px;
+                .new {
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                    color: darken($color-tertiaire, 40%);
+                    background-color: $color-tertiaire;
+                    font-size: 0.9rem;
+                    padding: 6px 13px;
+                    border-radius: 2px;
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+                .name {
+                    font-size: 1.25rem;
+                    font-weight: 600;
+                    display: inline-block;;
+                }
+                .city {
+                    font-size: 1.2rem;
+                    font-weight: 300;
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    figure:last-child {
+        @include only-phone {
+            margin-bottom: 0px;
+        }
+    }
 }

@@ -1,0 +1,19 @@
+button {
+    background: linear-gradient($color-secondaire, $color-primaire);
+    border-radius: 25px;
+    font-size: 1.1rem;
+    color: white;
+    padding: 20px;
+    border: none;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: max-content;
+    box-shadow: $shadow;
+    &:hover {
+        background: linear-gradient(lighten($color-secondaire, 5%),lighten($color-primaire, 5%) );
+        box-shadow: $shadow-dark;
+    }
+}

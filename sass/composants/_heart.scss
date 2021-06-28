@@ -1,0 +1,38 @@
+  $size-heart: 23px;
+  
+  .heart {
+    clip-path: path('M2 ,7 A5,  5,0,0,1, 12,7  A5, 5,0,0,1, 22, 7  Q22, 15,12,22 Q2,  15,2, 7 Z');
+    margin: 0;
+    display: block;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: url(../images/logo/heart-border2.svg);
+    background-size: 19px;
+    background-position: 2px 2px;
+    background-repeat: no-repeat;
+    position: relative;
+    border: 1px solid blue;
+    &::after {
+        content: "";
+        width: 25px;
+        height: 25px;
+        background: linear-gradient($color-primaire, $color-secondaire);
+        display: block;
+        z-index: 0;
+        transition: transform .5s ease-out;
+        transform-origin: bottom;
+        transform: scaleY(0);
+    }
+    &:hover {
+        &::after {
+            transform: scaleY(1);
+        }
+    }
+    &:not(hover) {
+        &::after {
+            height: $size-heart;
+            transform: scaleY(0);
+        }
+    }
+  }
