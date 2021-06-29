@@ -1,5 +1,4 @@
 main.restaurants {
-    
     picture {
         height: 260px;
         width: 100%;
@@ -8,6 +7,22 @@ main.restaurants {
             object-fit: cover;
         }
     }
+    h1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-basis: 100%;
+        padding: 35px 20px 5px 20px;
+        margin: -40px 0px 0px 0px;
+        font-family: 'Shrikhand', 'arial', cursive;
+        font-size: 1.4rem;
+        font-weight: normal;
+        width: 100%;
+        max-width: 1340px;
+        background-color: $color-superlight-gray;
+        border-radius: $radius-size $radius-size 0px 0px;
+    }
     article {
         display: flex;
         flex-direction: column;
@@ -15,27 +30,10 @@ main.restaurants {
         width: 100%;
         max-width: 1340px;
         background-color: $color-superlight-gray;
-        border-radius: $radius-size $radius-size 0px 0px;
-        margin-top: -40px;
         padding-bottom: 83px;
         @include media(desktop) {
             flex-direction: row;
             flex-wrap: wrap;
-        }
-        .titre {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            flex-basis: 100%;
-            margin: 35px 0px 5px 0px;
-            h1 {
-                font-family: 'Shrikhand', 'arial', cursive;
-                font-size: 1.4rem;
-                font-weight: normal;
-                width: 100%;
-                max-width: 1340px;
-            }
         }
         .bouton {
             display: flex;
@@ -81,6 +79,8 @@ main.restaurants {
                 position: relative;
                 cursor: pointer;
                 overflow: hidden;
+                opacity: 0;
+                transform: translateY(15px);
                 span {
                     display: inline-block;
                 }
@@ -109,6 +109,7 @@ main.restaurants {
                     background-color: $color-tertiaire;
                     z-index: 0;
                     transform: translateX(59px);
+                    transition: transform .5s ease-in-out;
                 }
                 &::after {
                     background: url(../images/logo/check-circle-solid.svg);
@@ -116,35 +117,33 @@ main.restaurants {
                     background-size: 20px 20px;
                     background-repeat: no-repeat;
                     z-index: 1;
-                    transform: translateX(59px);
+                    transform: translateX(59px) rotate(0deg);
+                    transition: transform .5s ease-in-out;                
                 }
                 &:hover {
                     &::before {
-                        animation: animate-before 2s forwards;
+                        transform: translateX(0px);
                     }
                     &::after {
-                        animation: animate-after 2s forwards;
+                        transform: translateX(0px) rotate(360deg);
                     }
                 }
             }
+            p.b01 {animation: menu 1s .1s forwards;}
+            p.b02 {animation: menu 1s .2s forwards;}
+            p.b03 {animation: menu 1s .3s forwards;}
         }
     }
 }
 
-@keyframes animate-before{
-    0% {
-        transform: translateX(59px);
-    }
-    to {
-        transform: translateX(0px);
-    }
-}
 
-@keyframes animate-after {
-    0% {
-        transform: rotate(0deg), translateX(59px);
+@keyframes menu {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
     }
     to {
-        transform: rotate(360deg), translateX(0px);
+        opacity: 1;
+        transform: translateY(0px);
     }
 }

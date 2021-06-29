@@ -97,7 +97,7 @@ header {
 }
 @media screen and (min-width: 1024px) {
   header {
-    justify-content: flex-start;
+    align-items: flex-start;
     max-width: 1340px;
   }
 }
@@ -110,6 +110,11 @@ header p.return {
 header p.return a {
   color: #353535;
 }
+@media screen and (min-width: 1024px) {
+  header p.return {
+    display: none;
+  }
+}
 header figure {
   margin: 0px;
   display: flex;
@@ -119,6 +124,11 @@ header figure {
 }
 header figure img {
   height: 28px;
+}
+@media screen and (min-width: 1024px) {
+  header figure {
+    margin-left: 20px;
+  }
 }
 header .localisation {
   width: 100%;
@@ -333,6 +343,38 @@ section#restaurant figure figcaption a .city {
   }
 }
 
+.test-heart {
+  position: relative;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  position: relative;
+  color: transparent;
+  margin: 0px;
+  background-clip: text;
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  transition: background-size 1s linear;
+  background-repeat: no-repeat;
+  background-size: 60px 0px;
+  background-position: bottom;
+}
+.test-heart::after {
+  background: url(../images/logo/heart-regular.svg);
+  width: 25px;
+  height: 25px;
+  display: block;
+  position: absolute;
+  top: 1px;
+  right: 0px;
+  z-index: 1;
+  color: black;
+  content: "";
+}
+.test-heart:hover {
+  background-size: 25px 25px;
+}
+
 main.restaurants picture {
   height: 260px;
   width: 100%;
@@ -341,6 +383,22 @@ main.restaurants picture img {
   height: 260px;
   object-fit: cover;
 }
+main.restaurants h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 100%;
+  padding: 35px 20px 5px 20px;
+  margin: -40px 0px 0px 0px;
+  font-family: "Shrikhand", "arial", cursive;
+  font-size: 1.4rem;
+  font-weight: normal;
+  width: 100%;
+  max-width: 1340px;
+  background-color: #f6f6f6;
+  border-radius: 20px 20px 0px 0px;
+}
 main.restaurants article {
   display: flex;
   flex-direction: column;
@@ -348,8 +406,6 @@ main.restaurants article {
   width: 100%;
   max-width: 1340px;
   background-color: #f6f6f6;
-  border-radius: 20px 20px 0px 0px;
-  margin-top: -40px;
   padding-bottom: 83px;
 }
 @media screen and (min-width: 1024px) {
@@ -357,21 +413,6 @@ main.restaurants article {
     flex-direction: row;
     flex-wrap: wrap;
   }
-}
-main.restaurants article .titre {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-basis: 100%;
-  margin: 35px 0px 5px 0px;
-}
-main.restaurants article .titre h1 {
-  font-family: "Shrikhand", "arial", cursive;
-  font-size: 1.4rem;
-  font-weight: normal;
-  width: 100%;
-  max-width: 1340px;
 }
 main.restaurants article .bouton {
   display: flex;
@@ -420,6 +461,8 @@ main.restaurants article section p {
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  opacity: 0;
+  transform: translateY(15px);
 }
 main.restaurants article section p span {
   display: inline-block;
@@ -449,6 +492,7 @@ main.restaurants article section p::before {
   background-color: #99E2D0;
   z-index: 0;
   transform: translateX(59px);
+  transition: transform 0.5s ease-in-out;
 }
 main.restaurants article section p::after {
   background: url(../images/logo/check-circle-solid.svg);
@@ -456,29 +500,33 @@ main.restaurants article section p::after {
   background-size: 20px 20px;
   background-repeat: no-repeat;
   z-index: 1;
-  transform: translateX(59px);
+  transform: translateX(59px) rotate(0deg);
+  transition: transform 0.5s ease-in-out;
 }
 main.restaurants article section p:hover::before {
-  animation: animate-before 2s forwards;
+  transform: translateX(0px);
 }
 main.restaurants article section p:hover::after {
-  animation: animate-after 2s forwards;
+  transform: translateX(0px) rotate(360deg);
+}
+main.restaurants article section p.b01 {
+  animation: menu 1s 0.1s forwards;
+}
+main.restaurants article section p.b02 {
+  animation: menu 1s 0.2s forwards;
+}
+main.restaurants article section p.b03 {
+  animation: menu 1s 0.3s forwards;
 }
 
-@keyframes animate-before {
-  0% {
-    transform: translateX(59px);
+@keyframes menu {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
   }
   to {
-    transform: translateX(0px);
-  }
-}
-@keyframes animate-after {
-  0% {
-    transform: rotate(0deg), translateX(59px);
-  }
-  to {
-    transform: rotate(360deg), translateX(0px);
+    opacity: 1;
+    transform: translateY(0px);
   }
 }
 button {
@@ -495,43 +543,116 @@ button {
   cursor: pointer;
   width: max-content;
   box-shadow: 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
+  transition: all 0.3s;
 }
 button:hover {
   background: linear-gradient(#ff93e1, #a16be0);
-  box-shadow: 0px 6px 7px -3px rgba(151, 151, 151, 0.94);
+  box-shadow: 0px 6px 7px -3px rgba(46, 45, 45, 0.94);
 }
 
 .heart {
-  clip-path: path("M2 ,7 A5,  5,0,0,1, 12,7  A5, 5,0,0,1, 22, 7  Q22, 15,12,22 Q2,  15,2, 7 Z");
-  margin: 0;
-  display: block;
-  cursor: pointer;
-  width: 25px;
-  height: 25px;
-  background: url(../images/logo/heart-border2.svg);
-  background-size: 19px;
-  background-position: 2px 2px;
-  background-repeat: no-repeat;
   position: relative;
-  border: 1px solid blue;
+  cursor: pointer;
+  width: 21px;
+  height: 21px;
+  font-size: 21px;
+  position: relative;
+  color: transparent;
+  margin: 0px;
+  background-clip: text;
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  transition: background-size 0.5s ease-in-out;
+  background-repeat: no-repeat;
+  background-size: 60px 0px;
+  background-position: bottom;
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900;
 }
 .heart::after {
-  content: "";
-  width: 25px;
-  height: 25px;
-  background: linear-gradient(#9356DC, #FF79DA);
+  background: url(../images/logo/heart-regular.svg);
+  width: 21px;
+  height: 21px;
   display: block;
-  z-index: 0;
-  transition: transform 0.5s ease-out;
-  transform-origin: bottom;
-  transform: scaleY(0);
+  position: absolute;
+  top: 1px;
+  right: 0px;
+  z-index: 1;
+  color: black;
+  content: "";
 }
-.heart:hover::after {
-  transform: scaleY(1);
+.heart:hover {
+  background-size: 25px 25px;
 }
-.heart:not(hover)::after {
-  height: 23px;
-  transform: scaleY(0);
+
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -50;
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-60px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.loader {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+  display: block;
+  animation: loader forwards;
+  animation-delay: 3s;
+  animation-duration: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader ul {
+  display: flex;
+}
+.loader ul li {
+  list-style: none;
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  margin: 0 4px;
+  border-radius: 50%;
+  animation: bounce 1s linear infinite;
+}
+.loader ul li:nth-child(1) {
+  animation-delay: 0.2s;
+  background-color: #9356DC;
+}
+.loader ul li:nth-child(2) {
+  animation-delay: 0.6s;
+  background-color: #FF79DA;
+}
+.loader ul li:nth-child(3) {
+  animation-delay: 0.1s;
+  background-color: #99E2D0;
+}
+.loader ul li:nth-child(4) {
+  animation-delay: 0.8s;
+  background-color: #9356DC;
+}
+.loader ul li:nth-child(5) {
+  animation-delay: 0.5s;
+  background-color: #FF79DA;
+}
+.loader ul li:nth-child(6) {
+  animation-delay: 0.1s;
+  background-color: #99E2D0;
 }
 
 /*# sourceMappingURL=style.css.map */

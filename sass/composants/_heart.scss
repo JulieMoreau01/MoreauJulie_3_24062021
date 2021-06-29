@@ -1,38 +1,33 @@
-  $size-heart: 23px;
-  
-  .heart {
-    clip-path: path('M2 ,7 A5,  5,0,0,1, 12,7  A5, 5,0,0,1, 22, 7  Q22, 15,12,22 Q2,  15,2, 7 Z');
-    margin: 0;
-    display: block;
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    background: url(../images/logo/heart-border2.svg);
-    background-size: 19px;
-    background-position: 2px 2px;
-    background-repeat: no-repeat;
+.heart {
     position: relative;
-    border: 1px solid blue;
+    cursor: pointer;
+    width: 21px;
+    height: 21px;
+    font-size: 21px;
+    position: relative;
+    color: transparent;
+    margin: 0px;
+    background-clip: text;
+    background-image: linear-gradient($color-primaire, $color-secondaire);
+    transition: background-size .5s ease-in-out;
+    background-repeat: no-repeat;
+    background-size: 60px 0px;
+    background-position: bottom;
+    font-family:  "Font Awesome 5 Free" !important; 
+    font-weight: 900;
     &::after {
-        content: "";
-        width: 25px;
-        height: 25px;
-        background: linear-gradient($color-primaire, $color-secondaire);
+        background: url(../images/logo/heart-regular.svg);
+        width: 21px;
+        height: 21px;
         display: block;
-        z-index: 0;
-        transition: transform .5s ease-out;
-        transform-origin: bottom;
-        transform: scaleY(0);
+        position: absolute;
+        top: 1px;
+        right: 0px;
+        z-index: 1;
+        color: black;
+        content: "";
     }
     &:hover {
-        &::after {
-            transform: scaleY(1);
-        }
+        background-size: 25px 25px;
     }
-    &:not(hover) {
-        &::after {
-            height: $size-heart;
-            transform: scaleY(0);
-        }
-    }
-  }
+}

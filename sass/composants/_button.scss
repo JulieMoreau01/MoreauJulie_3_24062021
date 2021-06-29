@@ -12,6 +12,7 @@ button {
     cursor: pointer;
     width: max-content;
     box-shadow: $shadow;
+    transition: all .3s;
     &:hover {
         background: linear-gradient(lighten($color-secondaire, 5%),lighten($color-primaire, 5%) );
         box-shadow: $shadow-dark;

@@ -8,7 +8,7 @@ header {
     width: 100%;
     position: relative;
     @include media(desktop) {
-        justify-content: flex-start;
+        align-items: flex-start;
         max-width: 1340px;
     }
     p.return {
@@ -16,9 +16,8 @@ header {
         position: absolute;
         top: 25px;
         left: 20px;
-        a {
-            color: $color-dark;
-        }
+        a {color: $color-dark;}
+        @include media(desktop) {display: none;}
     }
     figure {
         margin: 0px;
@@ -28,6 +27,9 @@ header {
         height: 63px;
         img {
             height: 28px;
+        }
+        @include media(desktop) {
+            margin-left: 20px;
         }
     }
     .localisation {

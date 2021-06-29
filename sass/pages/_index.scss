@@ -169,3 +169,36 @@ section#restaurant {
         }
     }
 }
+
+
+.test-heart {
+    position: relative;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    position: relative;
+    color: transparent;
+    margin: 0px;
+    background-clip: text;
+    background-image: linear-gradient($color-primaire, $color-secondaire);
+    transition: background-size 1s linear;
+    background-repeat: no-repeat;
+    background-size: 60px 0px;
+    background-position: bottom;
+    &::after {
+        background: url(../images/logo/heart-regular.svg);
+        width: 25px;
+        height: 25px;
+        display: block;
+        position: absolute;
+        top: 1px;
+        right: 0px;
+        z-index: 1;
+        color: black;
+        content: "";
+    }
+    &:hover {
+        background-size: 25px 25px;
+    }
+}
