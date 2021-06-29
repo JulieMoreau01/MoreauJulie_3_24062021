@@ -1,9 +1,150 @@
-picture {
+main.restaurants {
     
-    height: 260px;
-    width: 100%;
-    img {
+    picture {
         height: 260px;
-        object-fit: cover;
+        width: 100%;
+        img {
+            height: 260px;
+            object-fit: cover;
+        }
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1340px;
+        background-color: $color-superlight-gray;
+        border-radius: $radius-size $radius-size 0px 0px;
+        margin-top: -40px;
+        padding-bottom: 83px;
+        @include media(desktop) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .titre {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-basis: 100%;
+            margin: 35px 0px 5px 0px;
+            h1 {
+                font-family: 'Shrikhand', 'arial', cursive;
+                font-size: 1.4rem;
+                font-weight: normal;
+                width: 100%;
+                max-width: 1340px;
+            }
+        }
+        .bouton {
+            display: flex;
+            justify-content: center;
+            margin-top: 35px;
+            @include media(desktop) {
+                flex-basis: 100%;
+            }       
+        }
+        section {
+            @include media(desktop) {
+                flex-basis: 33%;
+            }
+            h2 {
+                text-transform: uppercase;
+                font-weight: 300;
+                font-size: 0.9rem;
+                position: relative;
+                margin: 0px;
+                padding-bottom: 4px;
+                margin-bottom: 14px;
+                margin-top: 30px;
+                &::after {
+                    content: "";
+                    width: 25px;
+                    height: 3px;
+                    background-color: $color-tertiaire;
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0px;
+                }
+            }
+            p {
+                margin: 0px 0px 14px 0px;
+                background-color: white;
+                padding: 16px 23px 16px 12px;
+                border-radius: $radius-size;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                height: 68px;
+                position: relative;
+                cursor: pointer;
+                overflow: hidden;
+                span {
+                    display: inline-block;
+                }
+                span.title {
+                    font-weight: 500;
+                    width: 100%;
+                }
+                span.info {
+                    font-weight: 300;
+                }
+                &::before, &::after {
+                    content: "";
+                    color: white;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 1.2rem;
+                    height: 68px;
+                    width: 59px;
+                    border-radius: 0px $radius-size $radius-size 0px;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                }
+                &::before {
+                    background-color: $color-tertiaire;
+                    z-index: 0;
+                    transform: translateX(59px);
+                }
+                &::after {
+                    background: url(../images/logo/check-circle-solid.svg);
+                    background-position: center center;
+                    background-size: 20px 20px;
+                    background-repeat: no-repeat;
+                    z-index: 1;
+                    transform: translateX(59px);
+                }
+                &:hover {
+                    &::before {
+                        animation: animate-before 2s forwards;
+                    }
+                    &::after {
+                        animation: animate-after 2s forwards;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes animate-before{
+    0% {
+        transform: translateX(59px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes animate-after {
+    0% {
+        transform: rotate(0deg), translateX(59px);
+    }
+    to {
+        transform: rotate(360deg), translateX(0px);
     }
 }

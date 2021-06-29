@@ -86,26 +86,28 @@ footer section ul li a {
 }
 
 header {
-  height: 63px;
-  box-shadow: 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
+  height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  padding: 0px 20px;
+  width: 100%;
+  position: relative;
 }
 @media screen and (min-width: 1024px) {
   header {
     justify-content: flex-start;
+    max-width: 1340px;
   }
 }
-header p {
+header p.return {
   margin: 0px;
   position: absolute;
-  top: center;
+  top: 25px;
   left: 20px;
 }
-header p a {
+header p.return a {
   color: #353535;
 }
 header figure {
@@ -113,19 +115,14 @@ header figure {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 63px;
 }
 header figure img {
   height: 28px;
 }
-
-section#introduction, section#fonctionnement, section#restaurant {
-  padding-top: 54px;
-  padding-bottom: 64px;
-}
-
-section#localisation {
+header .localisation {
   width: 100%;
+  margin: 0px;
   background-color: #eaeaea;
   height: 50px;
   display: flex;
@@ -133,9 +130,26 @@ section#localisation {
   align-items: center;
   font-weight: 400;
   font-size: 1.3rem;
+  box-shadow: inset 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
 }
-section#localisation i {
+header .localisation i {
   margin-right: 18px;
+}
+@media screen and (min-width: 1024px) {
+  header .localisation {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    background-color: white;
+    box-shadow: none;
+    width: max-content;
+    height: 63px;
+  }
+}
+
+section#introduction, section#fonctionnement, section#restaurant {
+  padding-top: 54px;
+  padding-bottom: 64px;
 }
 
 section#introduction {
@@ -144,6 +158,11 @@ section#introduction {
   justify-content: center;
   align-items: center;
   background-color: #f6f6f6;
+}
+@media screen and (min-width: 1024px) {
+  section#introduction {
+    box-shadow: inset 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
+  }
 }
 section#introduction h1 {
   text-align: center;
@@ -230,6 +249,7 @@ section#restaurant {
 @media screen and (min-width: 1024px) {
   section#restaurant {
     background-color: white;
+    padding-top: 0px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -313,15 +333,154 @@ section#restaurant figure figcaption a .city {
   }
 }
 
-picture {
+main.restaurants picture {
   height: 260px;
   width: 100%;
 }
-picture img {
+main.restaurants picture img {
   height: 260px;
   object-fit: cover;
 }
+main.restaurants article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1340px;
+  background-color: #f6f6f6;
+  border-radius: 20px 20px 0px 0px;
+  margin-top: -40px;
+  padding-bottom: 83px;
+}
+@media screen and (min-width: 1024px) {
+  main.restaurants article {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+main.restaurants article .titre {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 100%;
+  margin: 35px 0px 5px 0px;
+}
+main.restaurants article .titre h1 {
+  font-family: "Shrikhand", "arial", cursive;
+  font-size: 1.4rem;
+  font-weight: normal;
+  width: 100%;
+  max-width: 1340px;
+}
+main.restaurants article .bouton {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+@media screen and (min-width: 1024px) {
+  main.restaurants article .bouton {
+    flex-basis: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main.restaurants article section {
+    flex-basis: 33%;
+  }
+}
+main.restaurants article section h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.9rem;
+  position: relative;
+  margin: 0px;
+  padding-bottom: 4px;
+  margin-bottom: 14px;
+  margin-top: 30px;
+}
+main.restaurants article section h2::after {
+  content: "";
+  width: 25px;
+  height: 3px;
+  background-color: #99E2D0;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+main.restaurants article section p {
+  margin: 0px 0px 14px 0px;
+  background-color: white;
+  padding: 16px 23px 16px 12px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 68px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+main.restaurants article section p span {
+  display: inline-block;
+}
+main.restaurants article section p span.title {
+  font-weight: 500;
+  width: 100%;
+}
+main.restaurants article section p span.info {
+  font-weight: 300;
+}
+main.restaurants article section p::before, main.restaurants article section p::after {
+  content: "";
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  height: 68px;
+  width: 59px;
+  border-radius: 0px 20px 20px 0px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+main.restaurants article section p::before {
+  background-color: #99E2D0;
+  z-index: 0;
+  transform: translateX(59px);
+}
+main.restaurants article section p::after {
+  background: url(../images/logo/check-circle-solid.svg);
+  background-position: center center;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  z-index: 1;
+  transform: translateX(59px);
+}
+main.restaurants article section p:hover::before {
+  animation: animate-before 2s forwards;
+}
+main.restaurants article section p:hover::after {
+  animation: animate-after 2s forwards;
+}
 
+@keyframes animate-before {
+  0% {
+    transform: translateX(59px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+@keyframes animate-after {
+  0% {
+    transform: rotate(0deg), translateX(59px);
+  }
+  to {
+    transform: rotate(360deg), translateX(0px);
+  }
+}
 button {
   background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 25px;
