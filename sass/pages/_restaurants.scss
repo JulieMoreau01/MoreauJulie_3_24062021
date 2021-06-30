@@ -12,7 +12,6 @@ main.restaurants {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        flex-basis: 100%;
         padding: 35px 20px 5px 20px;
         margin: -40px 0px 0px 0px;
         font-family: 'Shrikhand', 'arial', cursive;
@@ -40,12 +39,12 @@ main.restaurants {
             justify-content: center;
             margin-top: 35px;
             @include media(desktop) {
-                flex-basis: 100%;
+                width: 100%;
             }       
         }
         section {
             @include media(desktop) {
-                flex-basis: 33%;
+                width: 33%;
             }
             h2 {
                 text-transform: uppercase;
@@ -83,6 +82,7 @@ main.restaurants {
                 transform: translateY(15px);
                 transition: all .5s;
                 box-shadow: $shadow;
+                max-width: 100%;
                 span {
                     display: inline-block;
                     overflow: hidden;
@@ -141,6 +141,7 @@ main.restaurants {
                 }
                 &:hover {
                     padding-right: 70px !important;
+                    max-width: 100%;
                     &::before {
                         transform: translateX(0px);
                     }
