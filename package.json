@@ -4,8 +4,13 @@
   "description": "oh my food",
   "main": "index.js",
   "scripts": {
-    "sass": "sass ./sass/main.scss:./public/css/style.css -w --style expanded"
+    "sass": "sass ./sass/main.scss:./public/css/style.css -w --style expanded",
+    "prefix": "postcss ./public/css/style.css -u autoprefixer -d public/css"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "browserslist": [
+    "> 0%",
+    "last 2 versions"
+  ]
   }
