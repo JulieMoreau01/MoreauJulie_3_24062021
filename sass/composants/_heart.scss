@@ -16,16 +16,17 @@
     font-family:  "Font Awesome 5 Free" !important; 
     font-weight: 900;
     &::after {
-        background: url(../images/logo/heart-regular.svg);
         width: 21px;
         height: 21px;
         display: block;
         position: absolute;
-        top: 1px;
+        top: 0px;
         right: 0px;
         z-index: 1;
         color: black;
-        content: "";
+        content: "\f004";
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 400;
     }
     &:hover {
         background-size: 25px 25px;

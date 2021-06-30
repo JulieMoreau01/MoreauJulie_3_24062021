@@ -1,9 +1,10 @@
-button {
+.btn {
     background: linear-gradient($color-secondaire, $color-primaire);
     border-radius: 25px;
     font-size: 1.1rem;
     color: white;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border: none;
     height: 50px;
     display: flex;
@@ -16,5 +17,13 @@ button {
     &:hover {
         background: linear-gradient(lighten($color-secondaire, 5%),lighten($color-primaire, 5%) );
         box-shadow: $shadow-dark;
+    }
+    &--big {
+        padding-right: 48px;
+        padding-left: 48px;
+    }
+    &--small {
+        padding-right: 22px;
+        padding-left: 22px;        
     }
 }

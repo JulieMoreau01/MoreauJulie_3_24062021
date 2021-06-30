@@ -16,14 +16,14 @@ main.restaurants {
         padding: 35px 20px 5px 20px;
         margin: -40px 0px 0px 0px;
         font-family: 'Shrikhand', 'arial', cursive;
-        font-size: 1.4rem;
+        font-size: 1.9rem;
         font-weight: normal;
         width: 100%;
         max-width: 1340px;
         background-color: $color-superlight-gray;
-        border-radius: $radius-size $radius-size 0px 0px;
+        border-radius: 30px 30px 0px 0px;
     }
-    article {
+    .menu {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -50,15 +50,15 @@ main.restaurants {
             h2 {
                 text-transform: uppercase;
                 font-weight: 300;
-                font-size: 0.9rem;
+                font-size: 1.1rem;
                 position: relative;
                 margin: 0px;
-                padding-bottom: 4px;
+                padding-bottom: 7px;
                 margin-bottom: 14px;
                 margin-top: 30px;
                 &::after {
                     content: "";
-                    width: 25px;
+                    width: 40px;
                     height: 3px;
                     background-color: $color-tertiaire;
                     position: absolute;
@@ -68,28 +68,47 @@ main.restaurants {
             }
             p {
                 margin: 0px 0px 14px 0px;
+                padding: 0px 23px 0px 12px;
                 background-color: white;
-                padding: 16px 23px 16px 12px;
                 border-radius: $radius-size;
                 display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
                 height: 68px;
                 position: relative;
                 cursor: pointer;
                 overflow: hidden;
                 opacity: 0;
                 transform: translateY(15px);
+                transition: all .5s;
+                box-shadow: $shadow;
                 span {
                     display: inline-block;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis; 
+                }
+                span:nth-child(2) {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
                 }
                 span.title {
                     font-weight: 500;
                     width: 100%;
+                    font-size: 1.3rem;
+                    margin-bottom: 3px;
                 }
                 span.info {
                     font-weight: 300;
+                    flex-wrap: nowrap;
+                    font-size: 1.1rem;
+                }
+                span.prix {
+                    font-weight: 500;
+                    overflow: unset;
+                    text-overflow: unset;
                 }
                 &::before, &::after {
                     content: "";
@@ -121,6 +140,7 @@ main.restaurants {
                     transition: transform .5s ease-in-out;                
                 }
                 &:hover {
+                    padding-right: 70px !important;
                     &::before {
                         transform: translateX(0px);
                     }

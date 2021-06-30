@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -104,8 +105,9 @@ header {
 header p.return {
   margin: 0px;
   position: absolute;
-  top: 25px;
+  top: 20px;
   left: 20px;
+  font-size: 1.3rem;
 }
 header p.return a {
   color: #353535;
@@ -139,7 +141,7 @@ header .localisation {
   justify-content: center;
   align-items: center;
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   box-shadow: inset 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
 }
 header .localisation i {
@@ -176,13 +178,13 @@ section#introduction {
 }
 section#introduction h1 {
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 0px 0px 20px 0px;
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin: 0px 30px 20px 30px;
 }
 section#introduction p {
   margin: 0px 0px 30px 0px;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   text-align: center;
   font-weight: 300;
 }
@@ -215,11 +217,11 @@ section#fonctionnement ol li {
   justify-content: start;
   align-items: center;
   padding: 25px 0px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 25px;
   flex-basis: 30%;
   max-height: 72px;
-  box-shadow: 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
+  box-shadow: 0px 6px 7px -3px rgba(200, 200, 200, 0.44);
   margin-left: 11px;
 }
 section#fonctionnement ol li::before {
@@ -241,7 +243,7 @@ section#fonctionnement ol li i {
   margin: 0px 18px 0px 22px;
 }
 section#fonctionnement ol li.light {
-  background-color: #f2eafb;
+  background-color: #f4eefc;
 }
 section#fonctionnement ol li.light i {
   color: #9356DC;
@@ -272,7 +274,7 @@ section#restaurant h2 {
   width: 100%;
 }
 section#restaurant figure {
-  box-shadow: 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
+  box-shadow: 0px 6px 7px -3px rgba(200, 200, 200, 0.44);
   border-radius: 20px;
   margin-bottom: 25px;
   position: relative;
@@ -343,38 +345,6 @@ section#restaurant figure figcaption a .city {
   }
 }
 
-.test-heart {
-  position: relative;
-  cursor: pointer;
-  width: 25px;
-  height: 25px;
-  font-size: 25px;
-  position: relative;
-  color: transparent;
-  margin: 0px;
-  background-clip: text;
-  background-image: linear-gradient(#9356DC, #FF79DA);
-  transition: background-size 1s linear;
-  background-repeat: no-repeat;
-  background-size: 60px 0px;
-  background-position: bottom;
-}
-.test-heart::after {
-  background: url(../images/logo/heart-regular.svg);
-  width: 25px;
-  height: 25px;
-  display: block;
-  position: absolute;
-  top: 1px;
-  right: 0px;
-  z-index: 1;
-  color: black;
-  content: "";
-}
-.test-heart:hover {
-  background-size: 25px 25px;
-}
-
 main.restaurants picture {
   height: 260px;
   width: 100%;
@@ -392,14 +362,14 @@ main.restaurants h1 {
   padding: 35px 20px 5px 20px;
   margin: -40px 0px 0px 0px;
   font-family: "Shrikhand", "arial", cursive;
-  font-size: 1.4rem;
+  font-size: 1.9rem;
   font-weight: normal;
   width: 100%;
   max-width: 1340px;
   background-color: #f6f6f6;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 30px 30px 0px 0px;
 }
-main.restaurants article {
+main.restaurants .menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -409,72 +379,91 @@ main.restaurants article {
   padding-bottom: 83px;
 }
 @media screen and (min-width: 1024px) {
-  main.restaurants article {
+  main.restaurants .menu {
     flex-direction: row;
     flex-wrap: wrap;
   }
 }
-main.restaurants article .bouton {
+main.restaurants .menu .bouton {
   display: flex;
   justify-content: center;
   margin-top: 35px;
 }
 @media screen and (min-width: 1024px) {
-  main.restaurants article .bouton {
+  main.restaurants .menu .bouton {
     flex-basis: 100%;
   }
 }
 @media screen and (min-width: 1024px) {
-  main.restaurants article section {
+  main.restaurants .menu section {
     flex-basis: 33%;
   }
 }
-main.restaurants article section h2 {
+main.restaurants .menu section h2 {
   text-transform: uppercase;
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   position: relative;
   margin: 0px;
-  padding-bottom: 4px;
+  padding-bottom: 7px;
   margin-bottom: 14px;
   margin-top: 30px;
 }
-main.restaurants article section h2::after {
+main.restaurants .menu section h2::after {
   content: "";
-  width: 25px;
+  width: 40px;
   height: 3px;
   background-color: #99E2D0;
   position: absolute;
   bottom: 0px;
   left: 0px;
 }
-main.restaurants article section p {
+main.restaurants .menu section p {
   margin: 0px 0px 14px 0px;
+  padding: 0px 23px 0px 12px;
   background-color: white;
-  padding: 16px 23px 16px 12px;
   border-radius: 20px;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
   height: 68px;
   position: relative;
   cursor: pointer;
   overflow: hidden;
   opacity: 0;
   transform: translateY(15px);
+  transition: all 0.5s;
+  box-shadow: 0px 6px 7px -3px rgba(200, 200, 200, 0.44);
 }
-main.restaurants article section p span {
+main.restaurants .menu section p span {
   display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-main.restaurants article section p span.title {
+main.restaurants .menu section p span:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main.restaurants .menu section p span.title {
   font-weight: 500;
   width: 100%;
+  font-size: 1.3rem;
+  margin-bottom: 3px;
 }
-main.restaurants article section p span.info {
+main.restaurants .menu section p span.info {
   font-weight: 300;
+  flex-wrap: nowrap;
+  font-size: 1.1rem;
 }
-main.restaurants article section p::before, main.restaurants article section p::after {
+main.restaurants .menu section p span.prix {
+  font-weight: 500;
+  overflow: unset;
+  text-overflow: unset;
+}
+main.restaurants .menu section p::before, main.restaurants .menu section p::after {
   content: "";
   color: white;
   display: flex;
@@ -488,13 +477,13 @@ main.restaurants article section p::before, main.restaurants article section p::
   top: 0px;
   right: 0px;
 }
-main.restaurants article section p::before {
+main.restaurants .menu section p::before {
   background-color: #99E2D0;
   z-index: 0;
   transform: translateX(59px);
   transition: transform 0.5s ease-in-out;
 }
-main.restaurants article section p::after {
+main.restaurants .menu section p::after {
   background: url(../images/logo/check-circle-solid.svg);
   background-position: center center;
   background-size: 20px 20px;
@@ -503,19 +492,22 @@ main.restaurants article section p::after {
   transform: translateX(59px) rotate(0deg);
   transition: transform 0.5s ease-in-out;
 }
-main.restaurants article section p:hover::before {
+main.restaurants .menu section p:hover {
+  padding-right: 70px !important;
+}
+main.restaurants .menu section p:hover::before {
   transform: translateX(0px);
 }
-main.restaurants article section p:hover::after {
+main.restaurants .menu section p:hover::after {
   transform: translateX(0px) rotate(360deg);
 }
-main.restaurants article section p.b01 {
+main.restaurants .menu section p.b01 {
   animation: menu 1s 0.1s forwards;
 }
-main.restaurants article section p.b02 {
+main.restaurants .menu section p.b02 {
   animation: menu 1s 0.2s forwards;
 }
-main.restaurants article section p.b03 {
+main.restaurants .menu section p.b03 {
   animation: menu 1s 0.3s forwards;
 }
 
@@ -529,12 +521,13 @@ main.restaurants article section p.b03 {
     transform: translateY(0px);
   }
 }
-button {
+.btn {
   background: linear-gradient(#FF79DA, #9356DC);
   border-radius: 25px;
   font-size: 1.1rem;
   color: white;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border: none;
   height: 50px;
   display: flex;
@@ -542,12 +535,20 @@ button {
   align-items: center;
   cursor: pointer;
   width: max-content;
-  box-shadow: 0px 6px 7px -3px rgba(151, 151, 151, 0.84);
+  box-shadow: 0px 6px 7px -3px rgba(200, 200, 200, 0.44);
   transition: all 0.3s;
 }
-button:hover {
+.btn:hover {
   background: linear-gradient(#ff93e1, #a16be0);
   box-shadow: 0px 6px 7px -3px rgba(46, 45, 45, 0.94);
+}
+.btn--big {
+  padding-right: 48px;
+  padding-left: 48px;
+}
+.btn--small {
+  padding-right: 22px;
+  padding-left: 22px;
 }
 
 .heart {
@@ -569,16 +570,17 @@ button:hover {
   font-weight: 900;
 }
 .heart::after {
-  background: url(../images/logo/heart-regular.svg);
   width: 21px;
   height: 21px;
   display: block;
   position: absolute;
-  top: 1px;
+  top: 0px;
   right: 0px;
   z-index: 1;
   color: black;
-  content: "";
+  content: "";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
 }
 .heart:hover {
   background-size: 25px 25px;
@@ -620,39 +622,41 @@ button:hover {
 }
 .loader ul {
   display: flex;
+  margin: 0px;
+  padding: 0px;
 }
 .loader ul li {
   list-style: none;
-  height: 20px;
-  width: 20px;
-  background-color: red;
+  height: 30px;
+  width: 30px;
   margin: 0 4px;
   border-radius: 50%;
-  animation: bounce 1s linear infinite;
+  animation: bounce 1s ease-in-out infinite;
+  box-shadow: 0px 6px 7px -3px rgba(200, 200, 200, 0.44);
 }
 .loader ul li:nth-child(1) {
   animation-delay: 0.2s;
-  background-color: #9356DC;
+  background: linear-gradient(#9356DC, #FF79DA);
 }
 .loader ul li:nth-child(2) {
   animation-delay: 0.6s;
-  background-color: #FF79DA;
+  background: linear-gradient(#FF79DA, #99E2D0);
 }
 .loader ul li:nth-child(3) {
   animation-delay: 0.1s;
-  background-color: #99E2D0;
+  background: linear-gradient(#99E2D0, #9356DC);
 }
 .loader ul li:nth-child(4) {
   animation-delay: 0.8s;
-  background-color: #9356DC;
+  background: linear-gradient(#FF79DA, #9356DC);
 }
 .loader ul li:nth-child(5) {
   animation-delay: 0.5s;
-  background-color: #FF79DA;
+  background: linear-gradient(#99E2D0, #FF79DA);
 }
 .loader ul li:nth-child(6) {
   animation-delay: 0.1s;
-  background-color: #99E2D0;
+  background: linear-gradient(#9356DC, #99E2D0);
 }
 
 /*# sourceMappingURL=style.css.map */
