@@ -1,6 +1,9 @@
 section#introduction, section#fonctionnement, section#restaurant {
     padding-top: 54px;
     padding-bottom: 64px;
+    @include media(desktop) {
+        padding-bottom: 44px;
+    }
 }
 
 section#introduction {
@@ -87,8 +90,6 @@ section#fonctionnement {
     }
 }
 
-$radius-size: 20px;
-
 section#restaurant {
     display: flex;
     flex-direction: column;
@@ -108,12 +109,8 @@ section#restaurant {
         border-radius: $radius-size;
         margin-bottom: 25px;
         position: relative;
-        @include media(tablet) {
-            flex-basis: 47%;
-        }
-        @include media(desktop) {
-            flex-basis: 22%;
-        }
+        @include media(tablet) {flex-basis: 47%;}
+        @include media(desktop) {flex-basis: 22%;}
         img {
             display: flex;
             border-radius: $radius-size $radius-size 0px 0px;
@@ -164,8 +161,7 @@ section#restaurant {
         }
     }
     figure:last-child {
-        @include only-phone {
-            margin-bottom: 0px;
-        }
+        @include media(phone) {margin-bottom: 0px;}
+        @include media(tablet) {margin-bottom: 25px;}
     }
 }

@@ -4,10 +4,10 @@
     width: 21px;
     height: 21px;
     font-size: 21px;
-    position: relative;
     color: transparent;
     margin: 0px;
     background-clip: text;
+    -webkit-background-clip: text;  
     background-image: linear-gradient($color-primaire, $color-secondaire);
     transition: background-size .5s ease-in-out;
     background-repeat: no-repeat;
