@@ -1,23 +1,26 @@
+// Animation heart
+$size-heart : 22px;
+
 .heart {
     position: relative;
     cursor: pointer;
-    width: 21px;
-    height: 21px;
-    font-size: 21px;
+    width: $size-heart;
+    height: $size-heart;
+    font-size: $size-heart;
     color: transparent;
     margin: 0px;
     background-clip: text;
-    -webkit-background-clip: text;  
+    -webkit-background-clip: text;
     background-image: linear-gradient($color-primaire, $color-secondaire);
     transition: background-size .5s ease-in-out;
     background-repeat: no-repeat;
-    background-size: 60px 0px;
+    background-size: ($size-heart + 20px) 0px;
     background-position: bottom;
     font-family:  "Font Awesome 5 Free" !important; 
     font-weight: 900;
     &::after {
-        width: 21px;
-        height: 21px;
+        width: $size-heart;
+        height: $size-heart;
         display: block;
         position: absolute;
         top: 0px;
@@ -29,6 +32,6 @@
         font-weight: 400;
     }
     &:hover {
-        background-size: 25px 25px;
+        background-size: $size-heart $size-heart;
     }
 }
