@@ -10,7 +10,6 @@ $size-heart : 22px;
     color: transparent;
     margin: 0px;
     background-clip: text;
-    -webkit-background-clip: text;
     background-image: linear-gradient($color-primaire, $color-secondaire);
     transition: background-size .5s ease-in-out;
     background-repeat: no-repeat;
