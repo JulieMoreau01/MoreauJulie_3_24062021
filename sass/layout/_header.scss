@@ -33,7 +33,7 @@ header {
             margin-left: 20px;
         }
     }
-    .localisation {
+    form.localisation {
         width: 100%;
         margin: 0px;
         background-color: $color-light-gray;
@@ -41,12 +41,7 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-weight: 400;
-        font-size: 1.2rem;
         box-shadow: inset 0px 6px 7px -3px rgba(151,151,151,0.84);
-        i {
-            margin-right: 18px;
-        }
         @include media(desktop) {
             position: absolute;
             top: 0px;
@@ -55,6 +50,21 @@ header {
             box-shadow: none;
             width: max-content;
             height: 63px;
+        }
+        p {
+            margin: 0;
+            i {
+                margin: 6px 18px 0px 0px;
+                font-size: 1.2rem;
+            }
+        }
+        input {
+            border: none;
+            background: none;
+            font-weight: 400;
+            font-size: 1.2rem;
+            text-align: left;
+            padding: 0;
         }
     }
 }

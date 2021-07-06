@@ -1,7 +1,7 @@
 // Animation heart
 $size-heart : 22px;
 
-.heart {
+.heart  {
     position: relative;
     cursor: pointer;
     width: $size-heart;
@@ -15,7 +15,7 @@ $size-heart : 22px;
     background-repeat: no-repeat;
     background-size: ($size-heart + 20px) 0px;
     background-position: bottom;
-    font-family:  "Font Awesome 5 Free" !important; 
+    font-family:  "Font Awesome 5 Free" !important;
     font-weight: 900;
     &::after {
         width: $size-heart;
@@ -29,8 +29,13 @@ $size-heart : 22px;
         content: "\f004";
         font-family: "Font Awesome 5 Free"; 
         font-weight: 400;
+        opacity: 1;
+        transition: opacity .5s ease-in-out;
     }
     &:hover {
         background-size: $size-heart $size-heart;
+        &::after {
+            opacity: 0;
+        }
     }
 }

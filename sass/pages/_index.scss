@@ -171,7 +171,7 @@ main {
         }
         figure:last-child {
             @include media(phone) {margin-bottom: 0px;}
-            @include media(tablet) {margin-bottom: 25px;}
+            @include media(tablet) {margin-bottom: 18px;}
         }
     }
 }

@@ -20,8 +20,11 @@ main.restaurants {
         font-weight: normal;
         width: 100%;
         max-width: 1340px;
-        background-color: $color-superlight-gray;
+        background-color: $color-superlight-gray; 
         border-radius: 35px 35px 0px 0px;
+        @include media(tablet) {
+            padding: 30px 40px 0px 40px;
+        }
         .heart {
             margin: 0px 20px 4px 0px;
         }
