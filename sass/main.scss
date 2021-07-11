@@ -1,18 +1,27 @@
 
+// UTILS
 @import "utils/variables.scss/";
 @import "utils/fonctions.scss/";
 @import "utils/mixins.scss/";
 @import "utils/placeholders.scss/";
+
+//BASE
 @import "base/base.scss/";
 
+//LAYOUT
 @import "layout/footer.scss/";
 @import "layout/header.scss/";
 
-
+//PAGES
 @import "pages/index.scss/";
 @import "pages/restaurants.scss/";
 
+//COMPOSANT
 @import "composants/button.scss/";
 @import "composants/heart.scss/";
 @import "composants/loader.scss/";
 @import "composants/menu.scss/";
+
+
+//THEMES
+//VENDOR

@@ -57,7 +57,8 @@
         @for $i from 1 through 6 {
             li:nth-child(#{$i}) {
                 animation-delay: random(800) + ms;
-                background: linear-gradient(map-get($bounce-color, color+random(3)), map-get($bounce-color, color+random(3)));
+                background: linear-gradient(map-get($bounce-color, color+random(3)), 
+                            map-get($bounce-color, color+random(3)));
             }
         }
     }

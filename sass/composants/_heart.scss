@@ -1,4 +1,5 @@
 // Animation heart
+
 $size-heart : 22px;
 
 .heart  {
@@ -34,8 +35,8 @@ $size-heart : 22px;
     }
     &:hover {
         background-size: $size-heart $size-heart;
-        &::after {
-            opacity: 0;
+        &::after { 
+            opacity: 0; 
         }
     }
 }

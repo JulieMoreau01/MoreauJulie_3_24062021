@@ -75,7 +75,7 @@ header {
                 
             }
             &:not(:focus) {
-                outline: 1px solid unset;
+                outline: 1px solid transparent;
             }
         }
     }

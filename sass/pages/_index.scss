@@ -2,7 +2,7 @@ main {
     h2 {
         font-size: 1.7rem;
         font-weight: 600;
-        margin: 0px 0 22px 0px;
+        margin: 0px 0px 22px 0px;
         width: 100%;
     }
 
@@ -64,6 +64,7 @@ main {
                 margin-left: 11px;
                 &::before {
                     content: counter(li);
+                    margin-left: -10px;
                     font-size: 0.9rem;
                     color: white;
                     width: 22px;
@@ -73,7 +74,6 @@ main {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    margin-left: -10px;
                 }
                 i {
                     font-size: 1.4rem;
@@ -145,9 +145,9 @@ main {
                     padding: 0px 14px;
                     .new {
                         position: absolute;
-                        top: 10px;
-                        right: 10px;
-                        color: darken($color-tertiaire, 40%);
+                        top: 13px;
+                        right: 13px; 
+                        color: darken($color-tertiaire, 40%); 
                         background-color: $color-tertiaire;
                         font-size: 0.9rem;
                         padding: 6px 13px;
@@ -165,6 +165,9 @@ main {
                         font-weight: 300;
                         display: inline-block;
                         width: 100%;
+                    }
+                    .heart {
+                        margin: 4px 10px 0px 0px;
                     }
                 }
             }
